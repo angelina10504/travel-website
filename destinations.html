@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Document</title>
+</head>
+<body>
+    <div class="Frame">
+        <img class="logo1" src="bmllogo.png"/>
+        <img class="logo" src="logo.jpeg" />
+        <li class="Rectangle" ></li>
+        <header>
+            <a href="#" class="brand"></a>
+            <div class="navigation">
+             <div class="navigation-items">
+              <a href="about.html">Home</a>
+              <a href="destinations.html">Destinations</a>
+              <a href="countries.html">Countries</a>
+              <a href="contact.html">Contact</a>
+             </div>
+            </div>
+         </header>
+
+         <section class="destination" >
+            <video class="video-slide active" style="clip-path: circle(150% at 0 50%); transition:2s ease;transition-property: clip-path;" src="island.mp4" autoplay muted loop></video>
+            <video class="video-slide" style="position:absolute;width: 100%;clip-path: circle (0% at 0 50%);" src="camping.mp4" autoplay muted loop></video>
+            <video class="video-slide" style="position:absolute;width: 100%;clip-path: circle (0% at 0 50%);" src="offroad.mp4" autoplay muted loop></video>
+            <video class="video-slide" style="position:absolute;width: 100%;clip-path: circle (0% at 0 50%);" src="roadtrip.mp4" autoplay muted loop></video>
+            <video class="video-slide" style="position:absolute;width: 100%;clip-path: circle (0% at 0 50%);" src="roadtrip.mp4" autoplay muted loop></video>
+            <div class="content active">
+                <h1>Wonderful.<br><span>Island</span></h1>
+                <p>Nestled in the heart of the crystal-clear waters of the [Island Name], Paradise Island is the ultimate tropical escape you've been dreaming of. With its pristine beaches, lush landscapes, and vibrant culture, this island offers an unforgettable experience for every traveler.</p>
+            </div> 
+            <div class="content">
+                <h1>Camping.<br><span>Enjoy</span></h1>
+                <p>Escape the hustle and bustle of city life and immerse yourself in the wonders of the natural world at our idyllic camping destination. Nestled in the heart of pristine wilderness, our campsite offers the ultimate escape for nature lovers, adventure seekers, and families.</p>
+            </div>
+            <div class="content">
+                <h1>Adventures.<br><span>off Road</span></h1>
+                <p>Get ready for the off-road adventure of a lifetime at our thrilling destination! Tucked away in the heart of rugged wilderness, our off-road holiday spot offers adrenaline-pumping experiences for those who crave excitement and natural beauty.</p>
+            </div>
+            <div class="content">
+                <h1>Road Trip.<br><span>Together</span></h1>
+                <p> Get ready for the adventure of a lifetime with our road trip holiday destination! Explore new horizons, discover hidden gems, and create unforgettable memories as you journey through diverse landscapes and charming towns.</p>
+            </div>
+            <div class="content">
+                <h1>Feel Nature.<br><span>Relax</span></h1>
+                <p>Escape the stresses of everyday life and find serenity in the heart of nature at our tranquil relaxation destination. Immerse yourself in the soothing rhythms of the natural world, where peace, rejuvenation, and tranquility are yours to embrace.</p>
+            </div>
+            <div class="slider-navigation">
+                <div class="nav-btn active"></div>
+                <div class="nav-btn"></div> 
+                <div class="nav-btn"></div> 
+                <div class="nav-btn"></div> 
+                <div class="nav-btn"></div>  
+            </div>
+        </section>
+        <script type="text/javascript">
+
+         //javascript for video slider navigation
+         const btns = document.querySelectorAll(".nav-btn");
+         const slides = document.querySelectorAll(".video-slide");
+         const contents = document.querySelectorAll(".content");
+
+         var sliderNav = function(manual){
+            btns.forEach((btn)=>{
+                btn.classList.remove("active");
+            });
+
+            slides.forEach((slide)=>{
+                slide.classList.remove("active");
+            });
+
+            contents.forEach((content)=>{
+                content.classList.remove("active");
+            });
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+         }
+
+         btns.forEach((btn,i) =>{
+            btn.addEventListener("click",()=>{
+                sliderNav(i);
+            });
+         });
+        </script>
+    </div>
+</body>
+</html>
